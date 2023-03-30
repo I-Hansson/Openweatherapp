@@ -13,6 +13,7 @@ body {
     transition: background-image 1s ease-in-out;
 }
 .overview{
+    padding: 0;
     position: absolute;
     top:50%;
     left: 50%;
@@ -20,21 +21,42 @@ body {
 
     display: flex;
    
-    
-    height: 550px;
+    height: 300px;
     width: 650px;
     border-radius: 15px;
     background-color: rgba(255,255,255,0.5);
     
     
+    
+    
+    
 }
 .widget{
-    background-color: aqua;
+    background-color: rgba(255,255,255,0.5);
     border-style: solid;
+    border-color: grey;
+    display: grid;
+    text-align: center;
     justify-content: center;
     align-items: center;
     height: 150px;
-    width: 151px;
+    width: 650px;
     margin-right: 10px;
     border-radius: 15px;
+}
+.name{
+    
+    
+    margin-top:0px;
+    height: 30px;
+}
+
+.tempmax{
+    
+    
+}
+
+.tempmin{
+    border-style: solid;
+
 }

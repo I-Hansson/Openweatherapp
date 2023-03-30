@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import './App.css';
-import DefaultCities from './DefaultCities';
-function Overview() {
-
-
+import CurrentWeather from './CurrentWeather';
+function Overview(props) {
+    
+    const indata = props.data
+    
     return (
       <div className="overview">
-            <DefaultCities city = "hej" temp = "da" />
-            <DefaultCities city = "hej" temp = "da" />
-            <DefaultCities city = "hej" temp = "da" />
-            <DefaultCities city = "hej" temp = "da" />
-            <DefaultCities city = "hej" temp = "da" />
-            <DefaultCities city = "hej" temp = "da" />
-            <DefaultCities city = "hej" temp = "da" />
-            <DefaultCities city = "hej" temp = "da" />
+            <CurrentWeather data = {indata} />
+        
+        
+        
       </div>
     );
   }
