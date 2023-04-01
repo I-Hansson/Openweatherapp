@@ -1,0 +1,13 @@
+.name{
+    border-style: solid;
+    height: 275px;
+    width: 150px;
+    margin: 1.5px;
+    border-style:groove;
+    border-radius: 5px;
+    border-color: black;
+    box-shadow: 2px 2px 2px #888888;
+}
+.temp{
+    margin: 10px;
+}
