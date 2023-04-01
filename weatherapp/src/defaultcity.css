@@ -9,5 +9,24 @@
     box-shadow: 2px 2px 2px #888888;
 }
 .temp{
-    margin: 10px;
+    margin: 20px;
+    margin-top: 20px;
+}
+
+
+.img{
+    margin-top: 15px;
+    position: fixed;
+    height: 80px;
+    width: 150px;
+    
+    
+}
+img{
+    margin: 0;
+   max-width: 50%;
+  padding-left: 25%;
+   height: auto;
+   padding-top: 40px;
+      
 }

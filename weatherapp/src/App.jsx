@@ -4,18 +4,15 @@ import React, {useState, useEffect,useRef, useMemo} from 'react';
 import Dashboard from './Dashboard';
 import BackgroundImage from './BackgroundImage';
 import backgroundImage from './assets/blue.png';
-import CurrentWeather from './CurrentWeather';
-import DefaultCity from './DefaultCity';
+
 
 import axios from "axios";
 
 function App() {
-
 const [location, setLocation] = useState('');
-const apiKey = '8258e2d6f1b0ef4fa041da86c4c5b8e1'
+const apiKey = 'Insert API KEY'
 const [polData, setPolData] = useState('');
 const [background, setBackground] = useState(backgroundImage);
-  
 
     const onEnter = (event) =>{
       if (event.key === 'Enter') {
@@ -27,10 +24,8 @@ const [background, setBackground] = useState(backgroundImage);
         
     }
   }
-
-
   const getData = (loc) => {
-    return axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${loc}&limit=5&appid=${apiKey}`)
+    return axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${loc}&limit=1&appid=${apiKey}`)
       .then((response) => {
         const lat = response.data[0].lat;
         const lon = response.data[0].lon;
@@ -38,7 +33,6 @@ const [background, setBackground] = useState(backgroundImage);
         return axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
           .then((response) => {
             return response.data;
-            
           });
       });
   }
@@ -64,11 +58,10 @@ useEffect(() => {
   
 },[])
 
+const handleClick = () => {
+  setPolData("")
+}
 
-
-
-
-  
 
   return (
     <div className="App">
@@ -80,7 +73,12 @@ useEffect(() => {
         placeholder='City' 
         type ="text" />
       <BackgroundImage image={background} />
+      
      <Dashboard data = {polData} defaultData = {defaultCities}/>
+     <div className ="button">
+       <button onClick = {handleClick}>Back</button>
+     </div>
+    
     </div>
   );
 }

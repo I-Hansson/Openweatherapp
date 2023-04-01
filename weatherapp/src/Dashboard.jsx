@@ -5,34 +5,20 @@ import DefaultCity from './DefaultCity';
 function Dashboard(props) {
     
     const selectedData = props.data
-    const defaultCityArray = props.defaultData
-    const [result, setResult] = useState()
-  
-
-
- function displayCities() {
-  
-
-  return (
-
-    <div className='defaultScreen'> 
-    <p>{defaultCityArray.length}</p>
-    {defaultCityArray.map((city) => {
-      console.log("I was here")
-      return <DefaultCity data={city} />
-    })} 
-    </div>
-  )
- }
-
-    
+    const defaultCityArray= props.defaultData
     return (
       <div className="overview">
 
           {props.data.main ? 
           <CurrentWeather data = {selectedData} />
           :
-          displayCities()
+          <div className='defaultScreen'>  
+          
+            {defaultCityArray.map(element => {
+               return <DefaultCity data={element} />
+            })
+            }
+         </div>
           }
       </div>
     );

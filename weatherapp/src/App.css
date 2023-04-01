@@ -71,8 +71,10 @@ body {
 .defaultScreen{
     padding: 7px;
     display: flex;
+}
+.button{
+    position: absolute;
+    top:530px;
+    left: 1075px;
     
-    
-    
-
 }
