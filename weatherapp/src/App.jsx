@@ -4,26 +4,25 @@ import React, {useState, useEffect,useRef, useMemo} from 'react';
 import Dashboard from './Dashboard';
 import BackgroundImage from './BackgroundImage';
 import backgroundImage from './assets/blue.png';
-
-
 import axios from "axios";
 
 function App() {
-const [location, setLocation] = useState('');
-const apiKey = 'Insert API KEY'
-const [polData, setPolData] = useState('');
+const [location, setLocation] = useState(''); 
+const apiKey = '8258e2d6f1b0ef4fa041da86c4c5b8e1'
+const [currentData, setCurrentData] = useState('');
 const [background, setBackground] = useState(backgroundImage);
 
+    //calls on input, set current data of a specifc city
     const onEnter = (event) =>{
       if (event.key === 'Enter') {
         setLocation("")
         getData(location).then((data) => {
-          setPolData(data);
-          
-        });
-        
+          setCurrentData(data);
+        });  
     }
   }
+  // using axios to sent and recive https requests
+  // translate the city to geo coordinates and return the data
   const getData = (loc) => {
     return axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${loc}&limit=1&appid=${apiKey}`)
       .then((response) => {
@@ -36,35 +35,30 @@ const [background, setBackground] = useState(backgroundImage);
           });
       });
   }
-
-
-
-
+  //init the default cities, get data from the api and store it in an array.
 const initCities = () =>{
   let result = []
-  const cities= ["London", "Stockholm", "Madrid", "copenhagen"]
-    for(let i = 0; i < 4;i++){ //ändra till dot map
+  const cities= ["London", "Stockholm", "Madrid", "Copenhagen"]
+    for(let i = 0; i < 4;i++){ //loop through the default cities to get the data
       getData(cities.at(i)).then((data) => {
         result.push(data)
       });
     }
     return result
 }
-
 const [defaultCities,setDefaultCities] = useState([])
 useEffect(() => {
-  
     setDefaultCities(initCities())
-  
 },[])
-
 const handleClick = () => {
-  setPolData("")
+  setCurrentData("")
 }
-
-
   return (
     <div className="App">
+      <div className ="title">
+      <p className='selectCity'>Input city to see weather</p>
+      </div>
+      
       <input 
         className='search'
         value = {location}
@@ -72,15 +66,16 @@ const handleClick = () => {
         onKeyDown = {onEnter}
         placeholder='City' 
         type ="text" />
-      <BackgroundImage image={background} />
+    <BackgroundImage image={background} />
       
-     <Dashboard data = {polData} defaultData = {defaultCities}/>
-     <div className ="button">
-       <button onClick = {handleClick}>Back</button>
-     </div>
-    
+     <Dashboard data = {currentData} defaultData = {defaultCities}/>
+     {currentData.main ?
+      <div className ="button">
+        <button onClick = {handleClick}>Back</button>
+      </div>:
+    null
+    }
     </div>
   );
 }
-
 export default App;

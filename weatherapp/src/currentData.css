@@ -21,6 +21,9 @@ p{
     width: 300px;
     
   }
+  .temp{
+    margin: 0;
+  }
   .feels{
     position: fixed;
     top: 25px;
@@ -66,4 +69,7 @@ p{
     height: 50px;
     width: 100px;
     
+  }
+  .widget{
+    border-style: solid;
   }

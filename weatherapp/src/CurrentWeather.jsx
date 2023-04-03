@@ -7,7 +7,7 @@ function CurrentWeather(props) {
       <div className="widget">
       <div className="top"> 
           <div className="location">
-            <h2>{data.name}</h2>
+            <p>{data.name}</p>
             <div className="temp"> 
             {data.main ? <h1>{Math.round((data.main.temp-273.15) * 10)/10}°C</h1> : null}
             </div>

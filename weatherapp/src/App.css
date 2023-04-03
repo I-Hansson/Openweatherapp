@@ -21,27 +21,20 @@ body {
 .overview{
     padding: 0;
     position: absolute;
-    top:50%;
+    top:60%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-   
-
     height: 300px;
     width: 650px;
     border-radius: 15px;
-    background-color: rgba(255,255,255,0.45);
-    box-shadow: 5px 5px 5px #888888;
+    
     
     
     
     
 }
-.search{
-    background-color: rgba(255,255,255,0.9);
-    border-color: black;
-   
-    
+input{
+    background-color: rgba(255,255,255,1);
     text-align: center;
     position: absolute;
     padding: 0;
@@ -49,16 +42,23 @@ body {
     font-size: 20px;
     height: 50px;
     width:  300px;
-    outline: none;
+    outline-style: none;
+    border-style: solid;
     box-sizing: border-box;
-    top:20%;
+    top:25%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 5px 5px 5px #888888;
 }
+input:hover{
+    border-color: black;
+    width: 350px;
+}
+input::selection{
+    border-color: black;
+    width: 350px;
+}
 .name{
-    
-    
     margin-top:0px;
     height: 30px;
 }
@@ -72,9 +72,27 @@ body {
     padding: 7px;
     display: flex;
 }
-.button{
+button{
     position: absolute;
-    top:530px;
-    left: 1075px;
+    top:80%;
+    left: 50%;
+    translate: -50%;
+    border-radius: 5px;
+    border-color: #888888;
     
+    width: 50px;
+    height: 30px;
+    box-shadow: 5px 5px 5px #888888;
+    
+}
+.title{
+    position: absolute;
+    top:2%;
+    left:50%;
+    translate: -50%;
+}
+
+.selectCity{
+    font-size: 50px;
+    color:#888888;
 }

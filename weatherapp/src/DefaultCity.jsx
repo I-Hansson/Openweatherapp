@@ -1,16 +1,16 @@
 import React from 'react';
-
 import './defaultcity.css'
 import rainy from './assets/rain.png'
 import sunny from './assets/sunny.png'
 import windy from './assets/windy.png'
 import cloudy from './assets/cloudy.png'
-import test from './App'
+
 function DefaultCity(props) {
         let data = props.data
+
+        //Diffrent imaes from diffrent weather
         function setImg(){
             var current = sunny
-            console.log(data.weather[0].main)
             if (data.weather[0].main === 'Clouds'){
                 current = cloudy
             }
@@ -24,15 +24,12 @@ function DefaultCity(props) {
                 current
             )
         }
-
-
-        
-    return (
+    return (//calculate Kelvin to celsius
         <div className="defaultcityies">
             <div className="name">
             <p>{data.name}</p>
-                <div className="temp">
-                <h2>{Math.round((data.main.temp_min-273.15) * 10)/10}°C</h2>
+                <div className="temp"> 
+                <h2>{Math.round((data.main.temp_min-273.15) * 10)/10}°C</h2> 
                 </div>
                 <div className="img">
                 <img src={setImg()} alt="" />

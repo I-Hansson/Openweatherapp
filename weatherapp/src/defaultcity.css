@@ -2,7 +2,7 @@
     border-style: solid;
     height: 275px;
     width: 150px;
-    margin: 1.5px;
+    margin: 2px;
     border-style:groove;
     border-radius: 5px;
     border-color: black;
@@ -12,21 +12,16 @@
     margin: 20px;
     margin-top: 20px;
 }
-
-
 .img{
     margin-top: 15px;
     position: fixed;
     height: 80px;
-    width: 150px;
-    
-    
+    width: 150px;    
 }
 img{
     margin: 0;
    max-width: 50%;
   padding-left: 25%;
    height: auto;
-   padding-top: 40px;
-      
+   padding-top: 40px;    
 }
