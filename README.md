@@ -9,7 +9,7 @@ In order to start the program, you need to download [Node.js](https://nodejs.org
 Then to start the program, run "npm run dev" in the "weatherapp" folder(same folder as before).
 The program will start running at localhost port 8000.
 
-Also insert your own api key (https://openweathermap.org/) in "app.jsx" ar row 11.
+Also insert your own api key (https://openweathermap.org/) in "app.jsx" at row 11.
 
 ## Info
 Program done with Vite.js and React.js
