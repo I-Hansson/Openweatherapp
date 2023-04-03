@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from 'react';
+
 import './currentData.css'
 function CurrentWeather(props) {
     const data = props.data

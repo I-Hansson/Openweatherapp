@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+
 import CurrentWeather from './CurrentWeather';
 import DefaultCity from './DefaultCity';
 function Dashboard(props) {

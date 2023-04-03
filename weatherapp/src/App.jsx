@@ -1,7 +1,7 @@
 
 import './App.css';
-import React, {useState, useEffect,useRef, useMemo} from 'react';
-import Dashboard from './Dashboard';
+import React, {useState, useEffect} from 'react';
+import Dashboard from './dashboard/Dashboard';
 import BackgroundImage from './BackgroundImage';
 import backgroundImage from './assets/blue.png';
 import axios from "axios";
