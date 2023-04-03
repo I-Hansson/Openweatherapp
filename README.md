@@ -11,5 +11,5 @@ The program will start running at localhost port 8000.
 
 Also insert your own api key (https://openweathermap.org/) in "app.jsx" ar row 11.
 
-## Setup
+## Info
 Program done with Vite.js and React.js
