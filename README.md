@@ -1,9 +1,11 @@
 # OpenWeather app
 
-## För att kunna starta programmet
+## Setup
 
 
-För att kunna starta programmet behöver man ladda ner [Node.js](https://nodejs.org/en/download).
-När man laddat ner Node.js måste man installera Axios, detta gör man genom att köra "npm install axios" när man är i mappen "./weatherapp".
 
-Sedan för att starta programmet så skall kör man "npm run dev" i ""weatherapp" mappen. 
+In order to start the program, you need to download [Node.js](https://nodejs.org/en/download). When you have downloaded Node.js, you must install Axios, this is done by running "npm install axios" when you are in the "./weatherapp" folder.
+
+Then to start the program, run "npm run dev" in the "weatherapp" folder(same folder as before).
+
+Also insert your own api key (https://openweathermap.org/) in "app.jsx" ar row 11.

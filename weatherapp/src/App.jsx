@@ -8,7 +8,7 @@ import axios from "axios";
 
 function App() {
 const [location, setLocation] = useState(''); 
-const apiKey = '8258e2d6f1b0ef4fa041da86c4c5b8e1'
+const apiKey = 'INSERT API KEY HERE'
 const [currentData, setCurrentData] = useState('');
 const [background, setBackground] = useState(backgroundImage);
 
