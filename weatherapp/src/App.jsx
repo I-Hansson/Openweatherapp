@@ -66,10 +66,10 @@ const handleClick = () => {
         onKeyDown = {onEnter}
         placeholder='City' 
         type ="text" />
-    <BackgroundImage image={background} />
+      <BackgroundImage image={background} />
       
-     <Dashboard data = {currentData} defaultData = {defaultCities}/>
-     {currentData.main ?
+      <Dashboard data = {currentData} defaultData = {defaultCities}/>
+      {currentData.main ?
       <div className ="button">
         <button onClick = {handleClick}>Back</button>
       </div>:

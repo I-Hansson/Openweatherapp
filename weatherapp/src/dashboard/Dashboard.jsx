@@ -6,7 +6,7 @@ function Dashboard(props) {
     const selectedData = props.data
     const defaultCityArray= props.defaultData
     return ( // return either the selected data from the input or default weather
-      <div className="overview">
+      <div className="dashboard">
           {props.data.main ? 
           <CurrentWeather data = {selectedData} />
           :
