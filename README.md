@@ -13,3 +13,5 @@ Also insert your own api key (https://openweathermap.org/) in "app.jsx" at row 1
 
 ## Info
 Program done with Vite.js and React.js
+
+Known bug: DefaultCity only re-renders on input event.
