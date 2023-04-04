@@ -38,7 +38,7 @@ const [background, setBackground] = useState(backgroundImage);
   //init the default cities, get data from the api and store it in an array.
 const initCities = () =>{
   let result = []
-  const cities= ["London", "Stockholm", "Madrid", "Copenhagen"]
+  const cities= ["London", "Stockholm", "Tenhult", "Copenhagen"]
     for(let i = 0; i < 4;i++){ //loop through the default cities to get the data
       getData(cities.at(i)).then((data) => {
         result.push(data)
