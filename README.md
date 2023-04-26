@@ -1,3 +1,6 @@
+## Update: Bug now fixed, See PR.
+
+
 # OpenWeather app
 
 ## Setup
