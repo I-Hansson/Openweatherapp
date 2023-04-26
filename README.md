@@ -1,4 +1,4 @@
-## Update: Bug now fixed, See PR.
+### Update: Bug now fixed, See PR.
 
 
 # OpenWeather app
