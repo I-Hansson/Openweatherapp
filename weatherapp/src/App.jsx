@@ -8,8 +8,9 @@ import axios from "axios";
 
 function App() {
 const [location, setLocation] = useState(''); 
-const apiKey = 'INSERT API KEY HERE'
+const apiKey = '8258e2d6f1b0ef4fa041da86c4c5b8e1'
 const [currentData, setCurrentData] = useState('');
+const [defaultCities,setDefaultCities] = useState([])
 const [background, setBackground] = useState(backgroundImage);
 
     //calls on input, set current data of a specifc city
@@ -36,20 +37,16 @@ const [background, setBackground] = useState(backgroundImage);
       });
   }
   //init the default cities, get data from the api and store it in an array.
-const initCities = () =>{
-  let result = []
-  const cities= ["London", "Stockholm", "Tenhult", "Copenhagen"]
-    for(let i = 0; i < 4;i++){ //loop through the default cities to get the data
-      getData(cities.at(i)).then((data) => {
-        result.push(data)
-      });
-    }
-    return result
-}
-const [defaultCities,setDefaultCities] = useState([])
-useEffect(() => {
-    setDefaultCities(initCities())
-},[])
+  const initCities = () => {
+    const cities = ["London", "Stockholm", "Tenhult", "Copenhagen"];
+    const promises = cities.map(city => getData(city));
+    return Promise.all(promises);
+  };
+
+  useEffect(() => {
+    initCities().then(data => setDefaultCities(data));
+  }, []);
+
 const handleClick = () => {
   setCurrentData("")
 }
@@ -67,8 +64,9 @@ const handleClick = () => {
         placeholder='City' 
         type ="text" />
       <BackgroundImage image={background} />
-      
-      <Dashboard data = {currentData} defaultData = {defaultCities}/>
+
+      <Dashboard data = {currentData} defaultCities = {defaultCities}/>
+
       {currentData.main ?
       <div className ="button">
         <button onClick = {handleClick}>Back</button>
