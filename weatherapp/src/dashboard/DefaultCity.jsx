@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './defaultcity.css'
 import rainy from '../assets/rain.png'
 import sunny from '../assets/sunny.png'
@@ -6,9 +6,10 @@ import windy from '../assets/windy.png'
 import cloudy from '../assets/cloudy.png'
 
 function DefaultCity(props) {
-        let data = props.data
+        const [data, setData] = useState(props.data);
+       
 
-        //Diffrent imaes from diffrent weather
+        //Diffrent images from diffrent weather
         function setImg(){
             var current = sunny
             if (data.weather[0].main === 'Clouds'){

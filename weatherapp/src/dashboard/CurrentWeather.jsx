@@ -19,26 +19,26 @@ function CurrentWeather(props) {
         </div>
         
         <div className="max">
-            <p>Max {data.weather ? <p className="bold" >{Math.round((data.main.temp_max-273.15) * 10)/10}°C</p> : null}
+            <p>Max {data.weather ? <span className="bold" >{Math.round((data.main.temp_max-273.15) * 10)/10}°C</span> : null}
            </p>
              </div> 
         <div className="min">
-            <p>Min {data.weather ? <p className="bold" >{Math.round((data.main.temp_min-273.15) * 10)/10}°C</p> : null}
+            <p>Min {data.weather ? <span className="bold" >{Math.round((data.main.temp_min-273.15) * 10)/10}°C</span> : null}
            </p>
              </div> 
 
         <div className="feels">
             <p>Feels like</p>
-           {data.weather ? <p className="bold" >{Math.round((data.main.feels_like-273.15) * 10)/10}°C</p> : null}
+           {data.weather ? <span className="bold" >{Math.round((data.main.feels_like-273.15) * 10)/10}°C</span> : null}
              </div> 
         <div className="humidity">
           <p>Humidity</p>
-            {data.weather ? <p className="bold" >{data.main.humidity}%</p> : null}
+            {data.weather ? <span className="bold" >{data.main.humidity}%</span> : null}
             
         </div>
         <div className="wind">
             <p>Wind</p>
-            {data.weather ? <p className="bold" >{(Math.round(data.wind.speed*1.609*10)/10)} kmh</p> : null} 
+            {data.weather ? <span className="bold" >{(Math.round(data.wind.speed*1.609*10)/10)} kmh</span> : null} 
            
             </div>
      </div>
